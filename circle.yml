@@ -1,30 +1,35 @@
 machine:
   xcode:
     version: "6.3.1"
+    # version: "6.2"
   environment:
+    LANG: en_US.UTF-8
     XCODE_SCHEME: Tips1
-    XCODE_PROJECT: Tips1.xcodeproj
-    XCODE_TARGET: Tips1
-    APPNAME: Tips1
-    DEPLOYGATE_USER_NAME: fsail
-    DEVELOPER_NAME: "iPhone Distribution: Fullsail,Inc. (ARXB9VDTE4)"
-    PROFILE_NAME: "Tips1Adhoc.mobileprovision"
-    # DEPLOYGATE_API_TOKEN: set from web form
-    # P12_FILE_PASSWORD: set from web form
+    XCODE_WORKSPACE: Tips1.xcworkspace
+    BUILD_URL: "https://circleci.com/gh/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM"
+    RELEASE_NOTE: "Auto build from $BUILD_URL"
+general:
+  artifacts:
+    - Distribution
+dependencies:
+  post:
+    - echo 'export PATH=$HOME/$CIRCLE_PROJECT_REPONAME/vendor/bundle/ruby/2.0.0/bin:$PATH' >> ~/.bashrc
 test:
-  override:
-    - xcodebuild
-        CODE_SIGNING_REQUIRED=NO
-        CODE_SIGN_IDENTITY=
-        PROVISIONING_PROFILE=
-        -project Tips1.xcodeproj -scheme Tips1 -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=8.1,name=iPhone 6'
-        clean test
-
-deployment:
-  deploygate:
-    branch: master
-    owner: xxx
-    commands:
-      - ./scripts/add-key.sh
-      - ./scripts/deploy.sh
-      - ./scripts/remove-key.sh
+  pre:
+    - /bin/bash Scripts/import-circle-keychain.sh
+    - /bin/bash Scripts/update-bundle-version.sh
+    - bundle exec rake env:export
+  post:
+    - /bin/bash Scripts/build-adhoc.sh:
+        environment:
+          APPNAME: Tips1
+    - /bin/bash  Scripts/distribute-deploygate.sh:
+        environment:
+          APPNAME: Tips1
+          DEPLOYGATE_DISTRIBUTION_KEY: $DEPLOYGATE_DISTRIBUTION_KEY
+    #- /bin/bash Scripts/build-release.sh:
+    #    environment:
+    #      APPNAME: Tips1
+    #- /bin/bash Scripts/build-release.sh:
+    #    environment:
+    #      APPNAME: Tips1
