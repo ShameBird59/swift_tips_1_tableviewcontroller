@@ -1,4 +1,6 @@
 machine:
+  xcode:
+    version: "6.3.2"
   environment:
     XCODE_SCHEME: Tips1
     XCODE_PROJECT: Tips1.xcodeproj
