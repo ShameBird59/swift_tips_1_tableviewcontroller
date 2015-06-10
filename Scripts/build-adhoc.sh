@@ -8,6 +8,6 @@ bundle exec ipa build \
   --scheme "$APPNAME" \
   --configuration Release \
   --destination Distribution/AdHoc \
-  --embed MobileProvisionings/${APPNAME}AdHoc.mobileprovision \
+  --embed MobileProvisionings/${APPNAME}Adhoc.mobileprovision \
   --identity "$DEVELOPER_NAME"
 
