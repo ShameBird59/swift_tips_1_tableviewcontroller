@@ -29,11 +29,11 @@ class ViewController: UITableViewController {
             return
         }
         
-        let json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSArray
+        let json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSArray
         for data in json {
             var item = Item(
-                title:data["title"] as String,
-                url:data["url"] as String
+                title:data["title"] as! String,
+                url:data["url"] as! String
             )
             mItems.append(item)
         }
@@ -52,9 +52,17 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         let item = mItems[indexPath.row]
         cell.textLabel?.text = item.title
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        let item = mItems[indexPath.row]
+        var vc = DetailViewController();
+        vc.mUrl = item.url
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

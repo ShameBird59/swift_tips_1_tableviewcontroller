@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>616ED141-6297-422D-976F-65DF57C117BC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tips1</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>574A3F84A2A04772048969BBBF4F8800367D471B</key>
+		<string>https://github.com/ShameBird59/swift_tips_1_tableviewcontroller.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tips1.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>574A3F84A2A04772048969BBBF4F8800367D471B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ShameBird59/swift_tips_1_tableviewcontroller.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>574A3F84A2A04772048969BBBF4F8800367D471B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>574A3F84A2A04772048969BBBF4F8800367D471B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>swift_tips_1_tableviewcontroller</string>
+		</dict>
+	</array>
+</dict>
+</plist>

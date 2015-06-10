@@ -12,6 +12,7 @@
 		24AC446F1ADA1DD50026D37F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24AC446D1ADA1DD50026D37F /* LaunchScreen.xib */; };
 		24AC447B1ADA1DD50026D37F /* Tips1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC447A1ADA1DD50026D37F /* Tips1Tests.swift */; };
 		24AC44851ADA1E190026D37F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC44841ADA1E190026D37F /* ViewController.swift */; };
+		531690961B008ED200FF0A21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531690951B008ED200FF0A21 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		24AC44791ADA1DD50026D37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24AC447A1ADA1DD50026D37F /* Tips1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips1Tests.swift; sourceTree = "<group>"; };
 		24AC44841ADA1E190026D37F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		531690951B008ED200FF0A21 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				24AC446D1ADA1DD50026D37F /* LaunchScreen.xib */,
 				24AC44621ADA1DD50026D37F /* Supporting Files */,
 				24AC44841ADA1E190026D37F /* ViewController.swift */,
+				531690951B008ED200FF0A21 /* DetailViewController.swift */,
 			);
 			path = Tips1;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				TargetAttributes = {
 					24AC445E1ADA1DD40026D37F = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = ARXB9VDTE4;
 					};
 					24AC44731ADA1DD50026D37F = {
 						CreatedOnToolsVersion = 6.2;
@@ -208,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531690961B008ED200FF0A21 /* DetailViewController.swift in Sources */,
 				24AC44851ADA1E190026D37F /* ViewController.swift in Sources */,
 				24AC44651ADA1DD50026D37F /* AppDelegate.swift in Sources */,
 			);
@@ -324,7 +329,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tips1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -334,7 +341,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Tips1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
