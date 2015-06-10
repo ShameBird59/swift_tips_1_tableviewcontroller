@@ -18,7 +18,7 @@ test:
   pre:
     - /bin/bash Scripts/import-circle-keychain.sh
     - /bin/bash Scripts/update-bundle-version.sh
-    - bundle exec rake env:export
+    #- bundle exec rake env:export
   post:
     - /bin/bash Scripts/build-adhoc.sh:
         environment:
