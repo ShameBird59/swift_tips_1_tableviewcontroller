@@ -1,3 +1,29 @@
+machine:
+  environment:
+    XCODE_SCHEME: Tips1
+    XCODE_PROJECT: Tips1.xcodeproj
+    XCODE_TARGET: Tips1
+    APPNAME: Tips1
+    DEPLOYGATE_USER_NAME: fsail
+    DEVELOPER_NAME: "iPhone Distribution: Fullsail,Inc. (ARXB9VDTE4)"
+    PROFILE_NAME: "Tips1Adhoc.mobileprovision"
+    # DEPLOYGATE_API_TOKEN: set from web form
+    # P12_FILE_PASSWORD: set from web form
 test:
   override:
     - exit 0
+    - xcodebuild
+        CODE_SIGNING_REQUIRED=NO
+        CODE_SIGN_IDENTITY=
+        PROVISIONING_PROFILE=
+        -project CircleCI-Sample.xcodeproj -scheme CircleCI-Sample -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=8.1,name=iPhone 6'
+        clean test
+
+deployment:
+  deploygate:
+    branch: master
+    owner: xxx
+    commands:
+      - ./scripts/add-key.sh
+      - ./scripts/deploy.sh
+      - ./scripts/remove-key.sh
