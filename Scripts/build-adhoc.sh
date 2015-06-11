@@ -3,8 +3,9 @@ set -eu
 
 XCODE_SCHEME=$APPNAME
 
+####
+# shenzhenでipaファイルが作成できなかったため、xcodebuildで対応
 #bundle exec sudo chown :wheel /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ *.simruntime/Contents/Resources/RuntimeRoot/usr/lib/dyld_sim
-
 #bundle exec sudo ipa build \
 #  --workspace "$XCODE_WORKSPACE" \
 #  --scheme "$APPNAME" \
